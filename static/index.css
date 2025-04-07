@@ -1,10 +1,10 @@
 @keyframes floating {
     0% {
         opacity: 0;
-        transform: translateX(0px) rotateZ(0deg);
+        transform: translateY(0px) rotateZ(0deg);
     }
     50% {
-        opacity: 1;
+        opacity: 0.5;
         transform: translateY(25px) rotateZ(180deg);
     }
     100% {
@@ -17,4 +17,5 @@
     position: absolute;
     z-index: -999;
     animation: floating 10s infinite linear;
+    transform-origin: 50% 42.5px;
 }
