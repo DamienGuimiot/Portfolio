@@ -1,21 +1,41 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.background {
+    overflow: hidden;
+}
+
 @keyframes floating {
     0% {
         opacity: 0;
-        transform: translateY(0px) rotateZ(0deg);
+        transform: rotateZ(0deg) translateY(0px);
     }
     50% {
         opacity: 0.5;
-        transform: translateY(25px) rotateZ(180deg);
+        transform: rotateZ(180deg) translateY(25px);
     }
     100% {
         opacity: 0;
-        transform: translateY(50px) rotateZ(360deg);
+        transform: rotateZ(360deg) translateY(50px);
     }
 }
 
-.backTriangle{
+.backTriangle {
     position: absolute;
     z-index: -999;
-    animation: floating 10s infinite linear;
+    animation: floating 30s infinite linear;
     transform-origin: 50% 42.5px;
+}
+
+.mainPage {
+    max-height: 100%;
+    overflow-y: scroll;
+}
+
+.mainPage::-webkit-scrollbar {
+    display: none;
 }

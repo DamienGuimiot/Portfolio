@@ -1,23 +1,43 @@
-export function initBackground(nbTriangle = 0) {
+export function initBackground() {
+    //remove all previous background triangles
+    document.querySelectorAll(".backTriangle").forEach((tr) => {tr.remove()})
+
+    //get background div
+    let backgroundDiv = document.querySelector(".background")
+
+    //find numbers of triangles
+    let nbTriangle = (document.documentElement.clientWidth / 150) * (document.documentElement.clientHeight / 125) * 10
+    console.log(nbTriangle)
+
+    //create all triangles
     for(let i = 0; i < nbTriangle; i++) {
         let tr = createTriangle()
-        let delay = Math.floor(Math.random() * 10)
+        let delay = Math.floor(Math.random() * 30)
         tr.style.animationDelay = -delay + "s"
-        document.body.append(tr)
-        setTimeout(() => {
-            tr.style.animationDelay = "0s"
-        }, (10-delay)*1000)
+        backgroundDiv.append(tr)
     }
+}
+
+export function createEventListeners() {
+    window.addEventListener("resize", debounce(initBackground, 1000))
 }
 
 function createTriangle() {
     let triangle = document.createElement("img")
     triangle.src = "./pictures/triangle.svg"
     // triangle.style.rotate = Math.floor(Math.random() * 360) + "deg"
-    triangle.style.left = Math.floor(Math.random() * document.documentElement.clientWidth) + "px"
-    triangle.style.top = Math.floor(Math.random() * document.documentElement.clientHeight) + "px"
-    triangle.style.width = (Math.floor(Math.random() * 25) + 8) + "px"
+    triangle.style.left = (Math.floor(Math.random() * document.documentElement.clientWidth)-25) + "px"
+    triangle.style.top = (Math.floor(Math.random() * document.documentElement.clientHeight)-75) + "px"
+    triangle.style.width = (Math.floor(Math.random() * 25) + 9) + "px"
     triangle.style.height = triangle.style.width
     triangle.classList.add("backTriangle")
     return triangle
+}
+
+function debounce(func, wait) {
+    let timer
+    return function debouncedFunc(...args) {
+        clearTimeout(timer)
+        timer = setTimeout(() => func(...args), wait)
+    }
 }
