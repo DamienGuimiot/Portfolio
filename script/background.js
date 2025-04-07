@@ -19,7 +19,7 @@ export function initBackground() {
 }
 
 export function createEventListeners() {
-    window.addEventListener("resize", debounce(initBackground, 1000))
+    window.addEventListener("resize", debounce(initBackground, 500))
 }
 
 function createTriangle() {
