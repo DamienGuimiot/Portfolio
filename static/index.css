@@ -1,0 +1,11 @@
+@keyframes floating {
+    0% {
+
+    }
+}
+
+.backTriangle{
+    position: absolute;
+    z-index: -999;
+    animation: floating 10s linear 2s;
+}
