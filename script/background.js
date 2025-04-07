@@ -1,7 +1,7 @@
 export function initBackground(nbTriangle = 0) {
     for(let i = 0; i < nbTriangle; i++) {
         let tr = createTriangle()
-        document.append(tr)
+        document.body.append(tr)
     }
 }
 
