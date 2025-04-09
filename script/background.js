@@ -7,13 +7,11 @@ export function initBackground() {
 
     //find numbers of triangles
     let nbTriangle = (document.documentElement.clientWidth / 150) * (document.documentElement.clientHeight / 125) * 10
-    console.log(nbTriangle)
 
     //create all triangles
     for(let i = 0; i < nbTriangle; i++) {
         let tr = createTriangle()
-        let delay = Math.floor(Math.random() * 30)
-        tr.style.animationDelay = -delay + "s"
+        tr.style.animationDelay = -Math.floor(Math.random() * 30) + "s"
         backgroundDiv.append(tr)
     }
 }
