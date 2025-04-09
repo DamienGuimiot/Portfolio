@@ -69,7 +69,16 @@ h1, .mainDiv {
 }
 
 .about {
+    display:flex;
+    flex-direction: row;
+    column-gap: 2%;
     max-width: 80%;
+}
+
+.about > img {
+    width: 15%;
+    height: 15%;
+    border-radius: 20px;
 }
 
 .tech {
@@ -98,14 +107,27 @@ h1, .mainDiv {
     border:rgba(0, 165, 255, 0.8) 2px solid;
     border-radius: 10px;
     padding: 10px;
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
 }
 
 .techCard > * {
     width: fit-content;
     margin-inline: auto;
+    transition: 0.2s;
 }
 
 .techCard > img {
     width: 50px;
     height: 50px;
+}
+
+.techCard:hover {
+    background-color: rgba(0, 165, 255, 1);
+    color: white;
+}
+
+.techCard:hover > img {
+    filter: hue-rotate(0deg) brightness(0%) invert(100%);
 }
