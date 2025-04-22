@@ -115,12 +115,13 @@ h1, .mainDiv {
 .techCard > * {
     width: fit-content;
     margin-inline: auto;
-    transition: 0.2s;
 }
 
 .techCard > img {
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
+    filter: invert(40%) sepia(84%) saturate(1272%) hue-rotate(176deg) brightness(103%) contrast(106%);
+    transition: 10s;
 }
 
 .techCard:hover {
@@ -129,5 +130,44 @@ h1, .mainDiv {
 }
 
 .techCard:hover > img {
-    filter: hue-rotate(0deg) brightness(0%) invert(100%);
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(248deg) brightness(106%) contrast(106%);
+}
+
+.project {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 80%;
+    width: fit-content;
+    padding: 3% 4%;    
+}
+
+.projectGrid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+    max-width: 80%;
+}
+
+.projectCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: rgba(0, 165, 255, 0.8) 2px solid;
+    border-radius: 10px;
+    padding: 10px;
+    width: 28%;
+    max-width: 28%;
+}
+
+.projectCard > p {
+    font-size: 21px;
+}
+
+.projectCard > .projectTitle {
+    font-size: 25px;
 }
