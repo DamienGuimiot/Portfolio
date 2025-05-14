@@ -6,7 +6,7 @@ export function initBackground() {
     let backgroundDiv = document.querySelector(".background")
 
     //find numbers of triangles
-    let nbTriangle = (document.documentElement.clientWidth / 150) * (document.documentElement.clientHeight / 125) * 10
+    let nbTriangle = (document.documentElement.clientWidth / 150) * (document.documentElement.clientHeight / 125) * 8
 
     //create all triangles
     for(let i = 0; i < nbTriangle; i++) {
