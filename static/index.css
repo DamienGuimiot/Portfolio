@@ -126,6 +126,7 @@ h1, .mainDiv {
 
 .techCard:hover {
     background-color: rgba(0, 165, 255, 1);
+    scale: 1.1;
     color: white;
 }
 
@@ -156,6 +157,7 @@ h1, .mainDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     background-color: white;
     border: rgba(0, 165, 255, 0.8) 2px solid;
     border-radius: 10px;
@@ -164,20 +166,54 @@ h1, .mainDiv {
     max-width: 28%;
 }
 
-.projectCard > p {
+.projectCard > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectCard > div > p {
     font-size: 21px;
 }
 
-.projectCard > .projectTitle {
+.projectCard > div > .projectTitle {
     font-size: 25px;
 }
 
-.projectCard > img {
+.projectCard > div > img {
     border-radius: 10px;
     max-width: 80%;
     max-height: 50%;
     width: 225px;
     height: 200px;
+}
+
+.projectCardLink {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 3px solid rgb(0, 165, 255);
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    margin: 15px 0;
+    transition: 0.2s;
+}
+
+.projectCardLink > img {
+    width: 75%;
+    filter: invert(40%) sepia(84%) saturate(1272%) hue-rotate(176deg) brightness(103%) contrast(106%);
+}
+
+.projectCardLink:hover {
+    background-color: rgb(0, 165, 255);
+    scale: 1.1;
+}
+
+.projectCardLink:hover > img {   
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(248deg) brightness(106%) contrast(106%);
 }
 
 .contact {
@@ -235,9 +271,9 @@ form > textarea:focus, form > input:focus {
 }
 
 form > button {
-    background-color: rgb(0, 165, 255);
-    color: white;
-    border: none;
+    background-color: white;
+    color: black;
+    border: 3px solid rgb(0, 165, 255);
     border-radius: 10px;
     font-size: 20px;
     padding: 2% 10%;
@@ -247,6 +283,8 @@ form > button {
 
 form > button:hover {
     scale: 1.1;
+    background-color: rgb(0, 165, 255);
+    color: white;
 }
 
 .socials {
@@ -278,6 +316,7 @@ form > button:hover {
 
 .socials > a:hover {
     background-color: rgba(0, 165, 255, 1);
+    scale: 1.1;
     color: white;
 }
 
